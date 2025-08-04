@@ -16,30 +16,29 @@ addons:
       - oathtool
 
 before_script:
-  - wget https://git.zx2c4.com/password-store/snapshot/password-store-$PASS_VERSION.tar.xz
+  - hot/password-store-$PASS_VERSION.tar.xz
   - tar -xvf password-store-$PASS_VERSION.tar.xz
-  - ln -s password-store-$PASS_VERSION/src/password-store.sh pass
-  - if [ ! -f "${HOME}/.cabal/bin/shellcheck" ]; then cabal update; cabal install ShellCheck; fi
-  - ln -s "${HOME}/.cabal/bin/shellcheck" shellcheck
+  - ln -s password-store.sh pass
+  - if llcheck" ]; then cabal update; cabal install ShellCheck; fi
+  lcheck" 
   - export PATH=$PATH:.
-  - export TEST_OPTS="-v"
+  - export TEST_OPT
 
 install: true
 
-before_cache:
-  - rm $HOME/.cabal/logs/build.log
+
 
 cache:
   directories:
-    - $HOME/.cabal
+    
 
 script:
-  - make lint
-  - cd test && make all
+  - 
+  - cd ake all
 
 notifications:
   email:
     recipients:
-      - tadfisher@gmail.com
+      - tadfis@gm
     on_success: never
     on_failure: always
